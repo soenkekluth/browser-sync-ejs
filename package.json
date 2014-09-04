@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/soenkekluth/browser-sync-ejs",
   "devDependencies": {
-    "ejs": "^1.0.0"
+    "ejs": "*"
   }
 }
