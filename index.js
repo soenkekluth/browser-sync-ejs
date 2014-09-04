@@ -14,10 +14,11 @@ module.exports = function(opt) {
   var baseDir = opt.baseDir || __dirname;
 
   return function(req, res, next) {
-    var file = req.url === '/' ? ('/index.' + ext) : req.url;
+    var file = req.url === '/' ? ('/index' + ext) : req.url;
     var pathname = path.join(baseDir, url.parse(file).pathname);
 
-    if (path.extname(file) === ext && fs.existsSync(pathname)) {
+    if (path.extname(pathname) === ext && fs.existsSync(pathname)) {
+
       var contents = fs.readFileSync(pathname).toString();
 
       config.query = url.parse(req.url, true).query;
