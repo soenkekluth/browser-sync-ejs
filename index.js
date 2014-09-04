@@ -4,7 +4,6 @@ var url = require('url');
 var path = require('path');
 var fs = require('fs');
 var ejs = require('ejs');
-var _ = require('lodash');
 
 
 module.exports = function(opt) {

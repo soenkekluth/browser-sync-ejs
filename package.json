@@ -1,6 +1,6 @@
 {
   "name": "browser-sync-ejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ejs middleware for browser-sync or connect",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/soenkekluth/browser-sync-ejs",
   "devDependencies": {
-    "ejs": "^1.0.0",
-    "lodash": "^2.4.1"
+    "ejs": "^1.0.0"
   }
 }
