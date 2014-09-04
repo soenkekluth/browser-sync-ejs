@@ -1,6 +1,6 @@
 {
   "name": "browser-sync-ejs",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "ejs middleware for browser-sync or connect",
   "main": "index.js",
   "scripts": {

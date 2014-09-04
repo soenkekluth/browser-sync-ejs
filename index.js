@@ -9,7 +9,7 @@ var ejs = require('ejs');
 module.exports = function(opt) {
 
   opt = opt || {};
-  var ext = opt.ext || 'ejs';
+  var ext = opt.ext || '.ejs';
   var config = opt.ejs || {};
   var baseDir = opt.baseDir || __dirname;
 
@@ -17,7 +17,7 @@ module.exports = function(opt) {
     var file = req.url === '/' ? ('/index.' + ext) : req.url;
     var pathname = path.join(baseDir, url.parse(file).pathname);
 
-    if (pathname.indexOf(ext) > -1 && fs.existsSync(pathname)) {
+    if (path.extname(file) === ext && fs.existsSync(pathname)) {
       var contents = fs.readFileSync(pathname).toString();
 
       config.query = url.parse(req.url, true).query;
