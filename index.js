@@ -27,7 +27,7 @@ module.exports = function(opt) {
       contents = ejs.render(contents, config);
 
       if (opt.browserSync) {
-        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + '/browser-sync-client.1.3.6.js"></script></head>');
+        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + '/browser-sync-client.1.3.7.js"></script></head>');
       }
 
       res.write(contents);
