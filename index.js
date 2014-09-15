@@ -30,7 +30,7 @@ module.exports = function(opt) {
         if(opt.browserSync === true){
           opt.browserSync = '1.4.0';
         }
-        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + '/browser-sync-client.' + opt.browserSync + '.js"></script></head>');
+        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + '/browser-sync/browser-sync-client.' + opt.browserSync + '.js"></script></head>');
       }
 
       res.write(contents);
