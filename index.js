@@ -12,6 +12,14 @@ module.exports = function(opt) {
   var ext = opt.ext || '.ejs';
   var config = opt.ejs || {};
   var baseDir = opt.baseDir || __dirname;
+  var bsURL = '';
+  if (opt.browserSync) {
+    if(opt.browserSync === true){
+      opt.browserSync = '1.4.0';
+    }
+    bsURL = opt.browserSync >= '1.4.0' ? '/browser-sync/browser-sync-client.' : '/browser-sync-client.';
+    bsURL += opt.browserSync + '.js';
+  }
 
   return function(req, res, next) {
     var file = req.url === '/' ? ('/index' + ext) : req.url;
@@ -27,10 +35,7 @@ module.exports = function(opt) {
       contents = ejs.render(contents, config);
 
       if (opt.browserSync) {
-        if(opt.browserSync === true){
-          opt.browserSync = '1.4.0';
-        }
-        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + '/browser-sync/browser-sync-client.' + opt.browserSync + '.js"></script></head>');
+        contents = contents.replace(/<\/head>/, '<script async src="//' + req.headers.host + bsURL + ' "></script></head>');
       }
 
       res.write(contents);
